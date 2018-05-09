@@ -1,17 +1,21 @@
 import React, { Component } from 'react'
-import {Button, Menu} from "semantic-ui-react";
+import {Menu} from "semantic-ui-react";
 import {NavLink} from "react-router-dom";
+import './styles/NavBar.css'
 
 
 class NavBar extends Component{
-    state = {}
+    state = {
+        activeItem: 'home'
+    }
 
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
     render(){
-        const { activeItem } = this.state
+        console.log(this.state.activeItem)
+        const { activeItem } = this.state.activeItem
         return (
-            <Menu>
+            <Menu secondary>
                 <Menu.Item
                     as = {NavLink}
                     to = '/'
